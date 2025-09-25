@@ -1,70 +1,79 @@
 :root {
-  --color: darkgreen;
+  --color: darkgreen; /* CSS-переменная для цвета текста */
+  --font: 'Sancreek', Helvetica, sans-serif; /* Шрифт с запасным вариантом */
 }
+
+/* Сброс стандартных отступов и задание глобальных стилей */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 900;
-  transition: all .3s;
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  -ms-transition: all .3s;
-  -o-transition: all .3s;
+  box-sizing: border-box; /* Учитываем границы и padding в ширине элементов */
+  font-family: var(--font);
+  font-weight: 400; /* Нормальная толщина шрифта */
+  transition: all .3s; /* Плавные переходы для всех свойств */
+  -webkit-transition: all .3s; /* Для Safari и Chrome */
+  -moz-transition: all .3s; /* Для Firefox */
+  -ms-transition: all .3s; /* Для старых версий IE */
+  -o-transition: all .3s; /* Для старых версий Opera */
 }
 
+/* Убираем прокрутку на странице */
 html {
   overflow: hidden;
 }
 
+/* Центрируем содержимое по вертикали и горизонтали */
 body {
-  min-height: 100vh;
+  min-height: 100vh; /* Минимальная высота - весь экран */
   display: flex;
   align-items: center;
   justify-content: center;
-  background: goldenrod;
+  background: goldenrod; /* Золотистый фон */
 }
 
+/* Контейнер занимает всю доступную область */
 .container {
   width: 100%;
   height: 100%;
 }
 
+/* SVG также занимает всю область контейнера */
 svg {
   width: 100%;
   height: 100%;
 }
 
+/* Стили для текста внутри SVG */
 svg text {
-  font-size: calc(5vw + 2rem);
-  stroke: var(--color);
-  stroke-width: 2;
-  animation: stroke 7s infinite alternate;
-  -webkit-animation: stroke 5s infinite alternate;
+  font-size: calc(5vw + 2rem); /* Адаптивный размер шрифта */
+  stroke: var(--color); /* Обводка текста */
+  stroke-width: 2; /* Толщина обводки */
+  animation: stroke 8s infinite alternate; /* Бесконечная анимация */
+  -webkit-animation: stroke 5s infinite alternate; /* Для WebKit-браузеров */
 }
 
+/* Анимация появления текста с эффектом "прорисовки" */
 @keyframes stroke {
   0% {
-    fill: rgba(255, 255, 255, 0);
-    stroke: var(--color);
-    stroke-dashoffset: 25%;
-    stroke-dasharray: 0 50%;
+    fill: rgba(255, 255, 255, 0); /* Прозрачная заливка */
+    stroke: var(--color); /* Цвет обводки */
+    stroke-dashoffset: 25%; /* Смещение штрихов */
+    stroke-dasharray: 0 50%; /* Прерывистая линия */
   }
   70% {
-    fill: rgba(255, 255, 255, 0);
+    fill: rgba(255, 255, 255, 0); /* Все еще прозрачная заливка */
     stroke: var(--color);
   }
   80% {
     fill: rgba(255, 255, 255, 0);
     stroke: var(--color);
-    stroke-width: 3;
+    stroke-width: 3; /* Утолщаем обводку */
   }
   100% {
-    fill: var(--color);
-    stroke: rgba(255, 255, 255, 0);
-    stroke-dashoffset: -25%;
-    stroke-dasharray: 50% 0;
-    stroke-width: 0;
+    fill: var(--color); /* Полностью заливаем текст */
+    stroke: rgba(255, 255, 255, 0); /* Прозрачная обводка */
+    stroke-dashoffset: -25%; /* Смещение в обратную сторону */
+    stroke-dasharray: 50% 0; /* Сплошная линия */
+    stroke-width: 0; /* Убираем обводку */
   }
 }

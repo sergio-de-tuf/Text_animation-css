@@ -3,13 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Sancreek:regular" rel="stylesheet" />
   <link rel="stylesheet" href="main.css">
   <title>Text animation</title>
 </head>
 <body>
   <div class="container">
     <svg>
-      <text x="50%" y="70%" text-anchor="middle">Frontend development for life</text>
+        <!-- 
+            Текст с анимацией "прорисовки"
+            x="50%" - горизонтальное центрирование текста
+            y="70%" - вертикальное позиционирование (70% от высоты SVG)
+            text-anchor="middle" - выравнивание текста по центру относительно точки x
+            Содержимое: "Frontend development for life"
+        -->
+        <text x="50%" y="70%" text-anchor="middle">Frontend development for life</text>
     </svg>
   </div>
 </body>
